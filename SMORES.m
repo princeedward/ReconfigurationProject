@@ -170,8 +170,8 @@ classdef SMORES < handle
             RightCenterWheel = (M2Point1+M2Point2)/2-obj.WheelOffSet*obj.AxisVector;
             plotCircle3D(LeftCenterWheel',obj.AxisVector',obj.WheelRadius);
             plotCircle3D(RightCenterWheel',obj.AxisVector',obj.WheelRadius);
-            LeftPadCenter  = (M1Point1+M1Point2)/2+(obj.WheelOffSet+obj.DisplayOffSet)*obj.AxisVector;
-            RightPadCenter = (M2Point1+M2Point2)/2-(obj.WheelOffSet+obj.DisplayOffSet)*obj.AxisVector;
+            LeftPadCenter  = (M2Point1+M2Point2)/2-(obj.WheelOffSet+obj.DisplayOffSet)*obj.AxisVector;  %(M1Point1+M1Point2)/2+(obj.WheelOffSet+obj.DisplayOffSet)*obj.AxisVector;
+            RightPadCenter = (M1Point1+M1Point2)/2+(obj.WheelOffSet+obj.DisplayOffSet)*obj.AxisVector;  %(M2Point1+M2Point2)/2-(obj.WheelOffSet+obj.DisplayOffSet)*obj.AxisVector;
             LeftXVector = (M1Point1-M1Point2)/norm(M1Point1-M1Point2);
             LeftYVector = cross(obj.AxisVector,LeftXVector);
             LeftPad1 = LeftPadCenter+LeftXVector*cos(-obj.Wheel1Angle/180*pi)*obj.CenterDisMag+LeftYVector*sin(-obj.Wheel1Angle/180*pi)*obj.CenterDisMag;
