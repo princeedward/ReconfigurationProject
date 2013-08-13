@@ -31,6 +31,7 @@ classdef SMORES < handle
         DockActualAngle = 0;
         Wheel1Speed = 0;        % The turning speed of the left wheel, n/s different direction by the sign of the value
         Wheel2Speed = 0;        % The turning speed of the right wheel
+        ConnectFlag = cell(4,3);% Four faces can be connected and for each face, we need to know whether it's connected, if so connected to whom, which face
     end
 %% public function
     methods
@@ -262,6 +263,9 @@ classdef SMORES < handle
                     end
                 end
             end
+        end
+        function [FacVec,FacPos] = ConnectionCheck(obj,WhichFace) % Return the face vector and face center point
+            
         end
     end    
 end
